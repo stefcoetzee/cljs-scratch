@@ -4,7 +4,7 @@
 
 (defonce app-state
   (r/atom
-   {:title "Scratch App"}))
+   {:title "My scratch app"}))
 
 ;; Reagent components
 
@@ -13,7 +13,7 @@
    (:title @app-state)])
 
 (defn app []
-  [:div {:class "bg-gray-400"}
+  [:div {:class "bg-gray-100 h-screen flex place-items-center justify-center"}
    [title]])
 
 (defn ^:dev/after-load start []
@@ -23,4 +23,8 @@
 
 (defn ^:export init []
   (js/console.log "Initialize")
+  (start))
+
+(comment
+  (swap! app-state assoc :title "App title")
   (start))
