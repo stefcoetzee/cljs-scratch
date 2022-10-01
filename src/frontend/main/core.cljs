@@ -9,10 +9,11 @@
 ;; Reagent components
 
 (defn title []
-  [:h1 (:title @app-state)])
+  [:h1 {:class "font-medium"}
+   (:title @app-state)])
 
 (defn app []
-  [:div {:class "app"}
+  [:div {:class "bg-gray-400"}
    [title]])
 
 (defn ^:dev/after-load start []
